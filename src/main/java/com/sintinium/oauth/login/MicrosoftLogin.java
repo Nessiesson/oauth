@@ -3,6 +3,7 @@ package com.sintinium.oauth.login;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.sintinium.oauth.util.DesktopApi;
 import com.sintinium.oauth.util.Lambdas;
 import com.sun.net.httpserver.HttpServer;
 import org.apache.http.HttpResponse;
@@ -150,7 +151,7 @@ public class MicrosoftLogin {
 //        Desktop.getDesktop().browse(new URI(msAuthUrl));
 
         try {
-            Desktop.getDesktop().browse(new URI(msAuthUrl));
+            DesktopApi.browse(new URI(msAuthUrl));
         } catch (Exception e) {
             e.printStackTrace();
         }
