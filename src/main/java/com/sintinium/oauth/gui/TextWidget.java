@@ -1,6 +1,7 @@
 package com.sintinium.oauth.gui;
 
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
 
 public class TextWidget {
     private final int x;
@@ -23,6 +24,8 @@ public class TextWidget {
     }
 
     public void draw(GuiScreen screen) {
+        GlStateManager.disableLighting();
         screen.drawString(screen.mc.fontRenderer, text, x, y, color);
+        GlStateManager.enableLighting();
     }
 }
